@@ -9,8 +9,9 @@ const solution: Words = [
 const solutionLetters = new Set<Letter>(solution.flatMap((word) => word));
 
 export function checkWords(guesses: Letter[]): {
-    errors: Letter[];
+    errors: Letter[]
     partialWords: PartialWords
+    lost: boolean
 } {
     const errors = guesses.filter((letter) => !solutionLetters.has(letter));
     const partialWords: PartialWords = [
@@ -21,7 +22,8 @@ export function checkWords(guesses: Letter[]): {
     ]
     return {
         errors,
-        partialWords
+        partialWords,
+        lost: errors.length >= 4
     }
     
 }

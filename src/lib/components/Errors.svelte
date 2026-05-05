@@ -7,8 +7,14 @@
 	});
 </script>
 
-<div class="mx-auto flex max-w-2xl justify-center gap-4">
+<div class="grid grid-cols-[repeat(4,4rem)] place-content-center gap-x-4 gap-y-2">
 	{#each firstFourLetters as letter, index (index)}
-		<div class="text-2xl font-bold text-red-500">{letter}</div>
+		<div
+			class="flex h-16 w-16 items-center justify-center rounded border-2 border-none focus:border-gray-500 focus:outline-none {letter
+				? ''
+				: 'bg-gray-100 text-gray-500'}"
+		>
+			<span class="text-2xl font-bold text-red-500 uppercase">{letter ?? '_'}</span>
+		</div>
 	{/each}
 </div>

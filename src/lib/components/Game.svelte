@@ -6,7 +6,7 @@
 	import Input from './Input.svelte';
 
 	const guesses: Letter[] = $state([]);
-	const { partialWords, errors } = $derived(checkWords(guesses));
+	const { partialWords, errors, lost } = $derived(checkWords(guesses));
 
 	function setLetter(letter: string) {
 		if (!isValidLetter(letter)) {
@@ -23,11 +23,11 @@
 <h1 class="text-4xl font-bold">4444</h1>
 
 <p class="mt-4 text-lg">
-	Guess four 4-letter words, one letter at a time. You cannot fail more than 4 times.
+	Guess four 4-letter words, one letter at a time. You're allowed to miss up to 4 times.
 </p>
 
 <div class="mt-4 flex flex-col justify-center gap-8">
-	<Grid {partialWords} />
+	<Grid {partialWords} {lost} />
 
 	<Errors {errors} />
 
