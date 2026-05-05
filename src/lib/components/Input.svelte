@@ -13,8 +13,8 @@
 	}
 </script>
 
-<form>
-	<label for="letter" class="sr-only">Enter a letter</label>
+<form class="flex flex-col items-center justify-center gap-2">
+	<label for="letter" class="text-xl">Enter a letter</label>
 	<input
 		class="h-16 w-16 rounded border-2 border-gray-300 p-2 text-center text-lg uppercase focus:border-gray-500 focus:outline-none"
 		type="text"
