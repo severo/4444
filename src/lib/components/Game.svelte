@@ -7,12 +7,10 @@
 
 	const guesses: Letter[] = $state([]);
 	const { partialWords, errors, lost } = $derived(checkWords(guesses));
+	const lastLetter = $derived(guesses[guesses.length - 1]);
 
 	function setLetter(letter: string) {
 		if (!isValidLetter(letter)) {
-			return;
-		}
-		if (guesses.includes(letter)) {
 			return;
 		}
 		console.log('Letter entered:', letter);
@@ -22,14 +20,12 @@
 
 <h1 class="text-4xl font-bold">4444</h1>
 
-<p class="mt-4 text-lg">
-	Guess four 4-letter words, one letter at a time. You're allowed to miss up to 4 times.
-</p>
+<p class="mt-4 text-lg">4 words to guess. 4 letters. Up to 4 misses.</p>
 
 <div class="mt-4 flex flex-col justify-center gap-8">
-	<Grid {partialWords} {lost} />
+	<Grid {partialWords} {lost} {lastLetter} />
 
-	<Errors {errors} />
+	<Errors {errors} {lastLetter} />
 
 	<Input {setLetter} />
 </div>

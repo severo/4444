@@ -16,7 +16,7 @@
 <form>
 	<label for="letter" class="sr-only">Enter a letter</label>
 	<input
-		class="rounded border-2 border-gray-300 p-2 text-center text-lg focus:border-gray-500 focus:outline-none"
+		class="h-16 w-16 rounded border-2 border-gray-300 p-2 text-center text-lg uppercase focus:border-gray-500 focus:outline-none"
 		type="text"
 		maxlength="1"
 		{oninput}

@@ -13,7 +13,7 @@ export function checkWords(guesses: Letter[]): {
     partialWords: PartialWords
     lost: boolean
 } {
-    const errors = guesses.filter((letter) => !solutionLetters.has(letter));
+    const errors = [...new Set(guesses)].filter((letter) => !solutionLetters.has(letter));
     const partialWords: PartialWords = [
         checkWord(solution[0], guesses),
         checkWord(solution[1], guesses),
