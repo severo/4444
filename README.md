@@ -40,3 +40,9 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+## TODO
+
+- [ ] create the main game page, client-side only
+- [ ] add the pages and effects
+- [ ] add a server component to manage game state (don't give the solution in the code, same problem every day for everyone)
